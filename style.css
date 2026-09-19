@@ -1961,3 +1961,274 @@ textarea:focus {
 body.modal-open {
   overflow: hidden;
 }
+/* =========================================================
+   COTADOR COMPLETO - SEGURO AUTO
+========================================================= */
+
+.auto-quote-dialog {
+  width: min(780px, 100%);
+}
+
+.auto-quote-step {
+  display: none;
+}
+
+.auto-quote-step.active {
+  display: block;
+}
+
+.auto-form-spacing {
+  margin-top: 26px;
+}
+
+/* =========================================================
+   BOTÕES SIM / NÃO
+========================================================= */
+
+.auto-yes-no-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.auto-binary-field {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.auto-binary-field > strong {
+  display: block;
+  color: var(--blue-900);
+  font-size: 0.94rem;
+  margin-bottom: 14px;
+}
+
+.auto-binary-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.auto-binary-options label {
+  cursor: pointer;
+}
+
+.auto-binary-options input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.auto-binary-options span {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfe5ee;
+  border-radius: 12px;
+  color: var(--blue-900);
+  font-weight: 800;
+  background: #ffffff;
+  transition: 0.2s ease;
+}
+
+.auto-binary-options span:hover {
+  border-color: var(--orange-500);
+  background: #fffaf5;
+}
+
+.auto-binary-options input:checked + span {
+  background: #fff4e8;
+  border-color: var(--orange-500);
+  color: var(--orange-700);
+  box-shadow:
+    0 0 0 3px rgba(255, 138, 24, 0.1);
+}
+
+/* =========================================================
+   ETAPA DE REVISÃO
+========================================================= */
+
+.auto-review {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.auto-review-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg-soft);
+  padding: 16px;
+}
+
+.auto-review-card.full {
+  grid-column: 1 / -1;
+}
+
+.auto-review-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.auto-review-card strong {
+  color: var(--blue-900);
+  font-size: 0.93rem;
+  line-height: 1.4;
+}
+
+.auto-review-section-title {
+  grid-column: 1 / -1;
+  color: var(--blue-900);
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-top: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.auto-observation {
+  margin-top: 8px;
+}
+
+/* =========================================================
+   STATUS / ERROS
+========================================================= */
+
+.auto-field-error {
+  border-color: #d92d20 !important;
+  box-shadow:
+    0 0 0 3px rgba(217, 45, 32, 0.08) !important;
+}
+
+.auto-field-error-message {
+  color: #d92d20;
+  font-size: 0.75rem;
+  margin-top: 5px;
+}
+
+/* =========================================================
+   SUCESSO
+========================================================= */
+
+.auto-success-id {
+  display: none;
+  margin: 18px 0 22px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f3f7fc;
+  color: var(--blue-900);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.auto-success-id.active {
+  display: block;
+}
+
+/* =========================================================
+   MELHORIAS VISUAIS DO FORMULÁRIO AUTO
+========================================================= */
+
+#autoQuoteForm .form-group {
+  position: relative;
+}
+
+#autoQuoteForm select,
+#autoQuoteForm input,
+#autoQuoteForm textarea {
+  background-color: #ffffff;
+}
+
+#autoQuoteForm input::placeholder,
+#autoQuoteForm textarea::placeholder {
+  color: #98a2b3;
+}
+
+#autoQuoteForm .quote-controls {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+
+#autoQuotePrev {
+  visibility: hidden;
+}
+
+#autoQuoteSubmit {
+  display: none;
+  margin-left: auto;
+}
+
+/* =========================================================
+   INDICADOR VISUAL DA ETAPA
+========================================================= */
+
+#autoQuoteProgressBar {
+  width: 14.285%;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+  .auto-quote-dialog {
+    width: 100%;
+  }
+
+  .auto-yes-no-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auto-review {
+    grid-template-columns: 1fr;
+  }
+
+  .auto-review-card.full {
+    grid-column: auto;
+  }
+
+  .auto-review-section-title {
+    grid-column: auto;
+  }
+
+  #autoQuoteForm .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #autoQuotePrev,
+  #autoQuoteNext,
+  #autoQuoteSubmit {
+    width: 100%;
+  }
+
+  #autoQuoteForm .quote-controls {
+    flex-direction: column-reverse;
+  }
+
+}
+
+/* =========================================================
+   TELAS MUITO PEQUENAS
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .auto-binary-options {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .auto-binary-field {
+    padding: 16px;
+  }
+
+}
