@@ -2214,6 +2214,1258 @@
        JS
   ========================================================== -->
 
+<!-- =========================================================
+     COTAÇÃO COMPLETA - SEGURO AUTO
+========================================================== -->
+
+<div
+  class="quote-modal"
+  id="autoQuoteModal"
+  aria-hidden="true"
+>
+
+  <div class="quote-modal-backdrop" id="autoQuoteBackdrop"></div>
+
+  <div
+    class="quote-modal-dialog auto-quote-dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="autoQuoteTitle"
+  >
+
+    <button
+      class="quote-close"
+      id="autoQuoteClose"
+      type="button"
+      aria-label="Fechar cotação"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="quote-modal-header">
+
+      <img
+        src="assets/images/logo-pensou-seguros.png"
+        alt="Pensou Seguros"
+        class="quote-logo"
+      >
+
+      <div class="quote-progress">
+        <div
+          class="quote-progress-bar"
+          id="autoQuoteProgressBar"
+        ></div>
+      </div>
+
+      <span
+        class="quote-step-counter"
+        id="autoQuoteStepCounter"
+      >
+        Etapa 1 de 7
+      </span>
+
+    </div>
+
+
+    <form
+      id="autoQuoteForm"
+      novalidate
+    >
+
+      <!-- CAMPOS INTERNOS -->
+
+      <input
+        type="hidden"
+        name="tipo_formulario"
+        value="cotacao_auto_completa"
+      >
+
+      <input
+        type="hidden"
+        name="origem"
+        value="Site Pensou Seguros"
+      >
+
+      <input
+        type="hidden"
+        name="pagina"
+        id="autoQuotePage"
+      >
+
+      <input
+        type="hidden"
+        name="utm_source"
+        id="autoUtmSource"
+      >
+
+      <input
+        type="hidden"
+        name="utm_medium"
+        id="autoUtmMedium"
+      >
+
+      <input
+        type="hidden"
+        name="utm_campaign"
+        id="autoUtmCampaign"
+      >
+
+
+      <!-- =====================================================
+           ETAPA 1 - COTAÇÃO
+      ====================================================== -->
+
+      <div
+        class="auto-quote-step active"
+        data-auto-step="1"
+      >
+
+        <div class="quote-step-heading">
+
+          <span>Seguro Auto</span>
+
+          <h2 id="autoQuoteTitle">
+            Vamos começar sua cotação
+          </h2>
+
+          <p>
+            Primeiro, conte para a gente se é um seguro novo
+            ou uma renovação.
+          </p>
+
+        </div>
+
+        <div class="quote-options-list">
+
+          <label class="quote-option-line">
+
+            <input
+              type="radio"
+              name="tipo_cotacao"
+              value="Novo seguro"
+              required
+            >
+
+            <span>
+              <i class="fa-solid fa-circle-plus"></i>
+
+              <strong>Novo seguro</strong>
+            </span>
+
+          </label>
+
+
+          <label class="quote-option-line">
+
+            <input
+              type="radio"
+              name="tipo_cotacao"
+              value="Renovação"
+              required
+            >
+
+            <span>
+              <i class="fa-solid fa-arrows-rotate"></i>
+
+              <strong>Renovação</strong>
+            </span>
+
+          </label>
+
+        </div>
+
+
+        <div class="form-grid auto-form-spacing">
+
+          <div class="form-group">
+
+            <label for="autoInicioVigencia">
+              Início de vigência
+            </label>
+
+            <input
+              type="date"
+              id="autoInicioVigencia"
+              name="inicio_vigencia"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoFimVigencia">
+              Fim de vigência
+            </label>
+
+            <input
+              type="date"
+              id="autoFimVigencia"
+              name="fim_vigencia"
+              required
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           ETAPA 2 - SEGURADO
+      ====================================================== -->
+
+      <div
+        class="auto-quote-step"
+        data-auto-step="2"
+      >
+
+        <div class="quote-step-heading">
+
+          <span>Segurado</span>
+
+          <h2>
+            Agora precisamos conhecer você
+          </h2>
+
+          <p>
+            Informe os dados do titular do seguro.
+          </p>
+
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label for="autoCpfCnpj">
+              CPF ou CNPJ
+            </label>
+
+            <input
+              type="text"
+              id="autoCpfCnpj"
+              name="cpf_cnpj"
+              placeholder="Digite apenas números"
+              inputmode="numeric"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoCepPernoite">
+              CEP do pernoite
+            </label>
+
+            <input
+              type="text"
+              id="autoCepPernoite"
+              name="cep_pernoite"
+              placeholder="00000-000"
+              inputmode="numeric"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group form-group-full">
+
+            <label for="autoNome">
+              Nome completo / Razão social
+            </label>
+
+            <input
+              type="text"
+              id="autoNome"
+              name="nome_razao_social"
+              autocomplete="name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoNascimento">
+              Data de nascimento
+            </label>
+
+            <input
+              type="date"
+              id="autoNascimento"
+              name="data_nascimento"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoSexo">
+              Sexo
+            </label>
+
+            <select
+              id="autoSexo"
+              name="sexo"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Outro">Outro</option>
+              <option value="Prefiro não informar">
+                Prefiro não informar
+              </option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoEmail">
+              E-mail
+            </label>
+
+            <input
+              type="email"
+              id="autoEmail"
+              name="email"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoCelular">
+              Celular / WhatsApp
+            </label>
+
+            <input
+              type="tel"
+              id="autoCelular"
+              name="celular"
+              placeholder="(11) 99999-9999"
+              autocomplete="tel"
+              required
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           ETAPA 3 - CONDUTOR
+      ====================================================== -->
+
+      <div
+        class="auto-quote-step"
+        data-auto-step="3"
+      >
+
+        <div class="quote-step-heading">
+
+          <span>Condutor</span>
+
+          <h2>
+            Quem será o principal condutor?
+          </h2>
+
+          <p>
+            Essas informações ajudam na análise do perfil de risco.
+          </p>
+
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-group form-group-full">
+
+            <label for="autoRelacao">
+              Relação com o segurado
+            </label>
+
+            <select
+              id="autoRelacao"
+              name="relacao_com_segurado"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Próprio segurado">
+                Próprio segurado
+              </option>
+              <option value="Cônjuge">Cônjuge</option>
+              <option value="Filho(a)">Filho(a)</option>
+              <option value="Pai ou mãe">Pai ou mãe</option>
+              <option value="Funcionário">Funcionário</option>
+              <option value="Outro">Outro</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoEstadoCivil">
+              Estado civil
+            </label>
+
+            <select
+              id="autoEstadoCivil"
+              name="estado_civil"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Solteiro(a)">Solteiro(a)</option>
+              <option value="Casado(a)">Casado(a)</option>
+              <option value="União estável">União estável</option>
+              <option value="Divorciado(a)">Divorciado(a)</option>
+              <option value="Viúvo(a)">Viúvo(a)</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoProfissao">
+              Profissão
+            </label>
+
+            <input
+              type="text"
+              id="autoProfissao"
+              name="profissao"
+              required
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           ETAPA 4 - VEÍCULO
+      ====================================================== -->
+
+      <div
+        class="auto-quote-step"
+        data-auto-step="4"
+      >
+
+        <div class="quote-step-heading">
+
+          <span>Veículo</span>
+
+          <h2>
+            Conte sobre o veículo
+          </h2>
+
+          <p>
+            Preencha o máximo de informações disponíveis.
+          </p>
+
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label for="autoTipoVeiculo">
+              Tipo de veículo
+            </label>
+
+            <select
+              id="autoTipoVeiculo"
+              name="tipo_veiculo"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Carro">Carro</option>
+              <option value="Moto">Moto</option>
+              <option value="Caminhão">Caminhão</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoPlaca">
+              Placa
+            </label>
+
+            <input
+              type="text"
+              id="autoPlaca"
+              name="placa"
+              placeholder="ABC1D23"
+            >
+
+          </div>
+
+
+          <div class="form-group form-group-full">
+
+            <label for="autoChassi">
+              Chassi
+              <span>se disponível</span>
+            </label>
+
+            <input
+              type="text"
+              id="autoChassi"
+              name="chassi"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoMarca">
+              Marca
+            </label>
+
+            <input
+              type="text"
+              id="autoMarca"
+              name="marca"
+              placeholder="Ex.: Toyota"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoZeroKm">
+              Zero Km?
+            </label>
+
+            <select
+              id="autoZeroKm"
+              name="zero_km"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoAnoFabricacao">
+              Ano fabricação
+            </label>
+
+            <input
+              type="number"
+              id="autoAnoFabricacao"
+              name="ano_fabricacao"
+              min="1900"
+              max="2100"
+              placeholder="2025"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoAnoModelo">
+              Ano modelo
+            </label>
+
+            <input
+              type="number"
+              id="autoAnoModelo"
+              name="ano_modelo"
+              min="1900"
+              max="2100"
+              placeholder="2026"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group form-group-full">
+
+            <label for="autoModelo">
+              Modelo
+            </label>
+
+            <input
+              type="text"
+              id="autoModelo"
+              name="modelo"
+              placeholder="Ex.: Corolla XEi 2.0"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoCombustivel">
+              Combustível
+            </label>
+
+            <select
+              id="autoCombustivel"
+              name="combustivel"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Flex">Flex</option>
+              <option value="Gasolina">Gasolina</option>
+              <option value="Etanol">Etanol</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Elétrico">Elétrico</option>
+              <option value="Híbrido">Híbrido</option>
+              <option value="Outro">Outro</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoCodigoFipe">
+              Código FIPE
+              <span>opcional</span>
+            </label>
+
+            <input
+              type="text"
+              id="autoCodigoFipe"
+              name="codigo_fipe"
+            >
+
+          </div>
+
+
+          <div class="form-group form-group-full">
+
+            <label for="autoValorFipe">
+              Valor FIPE
+              <span>opcional</span>
+            </label>
+
+            <input
+              type="text"
+              id="autoValorFipe"
+              name="valor_fipe"
+              placeholder="R$ 0,00"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           ETAPA 5 - CARACTERÍSTICAS
+      ====================================================== -->
+
+      <div
+        class="auto-quote-step"
+        data-auto-step="5"
+      >
+
+        <div class="quote-step-heading">
+
+          <span>Características</span>
+
+          <h2>
+            Algumas informações sobre o veículo
+          </h2>
+
+          <p>
+            Marque Sim ou Não para cada item.
+          </p>
+
+        </div>
+
+
+        <div class="auto-yes-no-grid">
+
+          <div class="auto-binary-field">
+            <strong>Veículo alienado?</strong>
+
+            <div class="auto-binary-options">
+              <label>
+                <input
+                  type="radio"
+                  name="alienado"
+                  value="Sim"
+                  required
+                >
+                <span>Sim</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="alienado"
+                  value="Não"
+                  required
+                >
+                <span>Não</span>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="auto-binary-field">
+            <strong>Possui kit gás?</strong>
+
+            <div class="auto-binary-options">
+              <label>
+                <input
+                  type="radio"
+                  name="kit_gas"
+                  value="Sim"
+                  required
+                >
+                <span>Sim</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="kit_gas"
+                  value="Não"
+                  required
+                >
+                <span>Não</span>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="auto-binary-field">
+            <strong>É blindado?</strong>
+
+            <div class="auto-binary-options">
+              <label>
+                <input
+                  type="radio"
+                  name="blindado"
+                  value="Sim"
+                  required
+                >
+                <span>Sim</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="blindado"
+                  value="Não"
+                  required
+                >
+                <span>Não</span>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="auto-binary-field">
+            <strong>Chassi remarcado?</strong>
+
+            <div class="auto-binary-options">
+              <label>
+                <input
+                  type="radio"
+                  name="chassi_remarcado"
+                  value="Sim"
+                  required
+                >
+                <span>Sim</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="chassi_remarcado"
+                  value="Não"
+                  required
+                >
+                <span>Não</span>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="auto-binary-field">
+            <strong>Possui antifurto?</strong>
+
+            <div class="auto-binary-options">
+              <label>
+                <input
+                  type="radio"
+                  name="antifurto"
+                  value="Sim"
+                  required
+                >
+                <span>Sim</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="antifurto"
+                  value="Não"
+                  required
+                >
+                <span>Não</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           ETAPA 6 - RISCO
+      ====================================================== -->
+
+      <div
+        class="auto-quote-step"
+        data-auto-step="6"
+      >
+
+        <div class="quote-step-heading">
+
+          <span>Avaliação de risco</span>
+
+          <h2>
+            Como o veículo é utilizado?
+          </h2>
+
+          <p>
+            Essas informações influenciam a análise das seguradoras.
+          </p>
+
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label for="autoGaragemResidencia">
+              Garagem na residência
+            </label>
+
+            <select
+              id="autoGaragemResidencia"
+              name="garagem_residencia"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Sim, fechada">
+                Sim, fechada
+              </option>
+              <option value="Sim, aberta">
+                Sim, aberta
+              </option>
+              <option value="Não">Não</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoGaragemTrabalho">
+              Garagem no trabalho
+            </label>
+
+            <select
+              id="autoGaragemTrabalho"
+              name="garagem_trabalho"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+              <option value="Não se aplica">
+                Não se aplica
+              </option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoGaragemEstudo">
+              Garagem no estudo
+            </label>
+
+            <select
+              id="autoGaragemEstudo"
+              name="garagem_estudo"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+              <option value="Não se aplica">
+                Não se aplica
+              </option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoTipoUso">
+              Tipo de uso
+            </label>
+
+            <select
+              id="autoTipoUso"
+              name="tipo_uso"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Particular">Particular</option>
+              <option value="Trabalho">Trabalho</option>
+              <option value="Comercial">Comercial</option>
+              <option value="Aplicativo">Aplicativo</option>
+              <option value="Entrega">Entrega</option>
+              <option value="Outro">Outro</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoMenores26">
+              Reside com menores de 26 anos?
+            </label>
+
+            <select
+              id="autoMenores26"
+              name="reside_com_menores_26"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
+
+          </div>
+
+
+          <div
+            class="form-group"
+            id="autoIdadeMenorGroup"
+          >
+
+            <label for="autoIdadeMenor">
+              Idade do menor condutor
+              <span>se aplicável</span>
+            </label>
+
+            <input
+              type="number"
+              id="autoIdadeMenor"
+              name="idade_menor_condutor"
+              min="18"
+              max="25"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoKmMensal">
+              Km rodados por mês
+            </label>
+
+            <input
+              type="number"
+              id="autoKmMensal"
+              name="km_mensal"
+              placeholder="Ex.: 1000"
+              min="0"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoDistanciaTrabalho">
+              Distância até o trabalho
+            </label>
+
+            <input
+              type="text"
+              id="autoDistanciaTrabalho"
+              name="distancia_trabalho"
+              placeholder="Ex.: 12 km ou não se aplica"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoTipoResidencia">
+              Tipo de residência
+            </label>
+
+            <select
+              id="autoTipoResidencia"
+              name="tipo_residencia"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Casa">Casa</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Condomínio">
+                Casa em condomínio
+              </option>
+              <option value="Outro">Outro</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="autoIsencaoFiscal">
+              Possui isenção fiscal?
+            </label>
+
+            <select
+              id="autoIsencaoFiscal"
+              name="isencao_fiscal"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           ETAPA 7 - REVISÃO / LGPD
+      ====================================================== -->
+
+      <div
+        class="auto-quote-step"
+        data-auto-step="7"
+      >
+
+        <div class="quote-step-heading">
+
+          <span>Finalização</span>
+
+          <h2>
+            Confira sua solicitação
+          </h2>
+
+          <p>
+            Revise os principais dados antes de enviar
+            para a equipe Pensou Seguros.
+          </p>
+
+        </div>
+
+
+        <div
+          class="auto-review"
+          id="autoQuoteReview"
+        >
+          <!-- preenchido pelo JavaScript -->
+        </div>
+
+
+        <div class="form-group auto-observation">
+
+          <label for="autoObservacoes">
+            Observações
+            <span>opcional</span>
+          </label>
+
+          <textarea
+            id="autoObservacoes"
+            name="observacoes"
+            rows="4"
+            placeholder="Deixe alguma informação adicional..."
+          ></textarea>
+
+        </div>
+
+
+        <label class="privacy-checkbox">
+
+          <input
+            type="checkbox"
+            name="consentimento_lgpd"
+            value="Sim"
+            required
+          >
+
+          <span>
+            Autorizo a Pensou Seguros a utilizar os dados informados
+            para análise e realização desta cotação e para entrar
+            em contato comigo sobre esta solicitação.
+            Li e concordo com a
+            <a
+              href="politica-de-privacidade.html"
+              target="_blank"
+            >
+              Política de Privacidade
+            </a>.
+          </span>
+
+        </label>
+
+      </div>
+
+
+      <!-- =====================================================
+           CONTROLES
+      ====================================================== -->
+
+      <div class="quote-controls">
+
+        <button
+          type="button"
+          class="btn btn-secondary"
+          id="autoQuotePrev"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+          Voltar
+        </button>
+
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="autoQuoteNext"
+        >
+          Continuar
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          id="autoQuoteSubmit"
+        >
+          Solicitar cotação
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+
+      </div>
+
+
+      <div
+        class="form-status"
+        id="autoFormStatus"
+        aria-live="polite"
+      ></div>
+
+    </form>
+
+
+    <!-- =======================================================
+         SUCESSO
+    ======================================================== -->
+
+    <div
+      class="quote-success"
+      id="autoQuoteSuccess"
+    >
+
+      <div class="success-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <span>Cotação enviada</span>
+
+      <h2>
+        Recebemos sua solicitação.
+      </h2>
+
+      <p>
+        Seus dados foram enviados para a equipe da Pensou Seguros.
+        Agora nossa equipe poderá analisar as informações
+        e continuar sua cotação.
+      </p>
+
+      <div
+        class="auto-success-id"
+        id="autoSuccessId"
+      ></div>
+
+      <a
+        href="https://wa.me/5511976828160?text=Olá%2C%20acabei%20de%20preencher%20a%20cotação%20de%20Seguro%20Auto%20pelo%20site."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-whatsapp btn-full"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        Falar com a equipe no WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+  
   <script src="app.js"></script>
 
 </body>
