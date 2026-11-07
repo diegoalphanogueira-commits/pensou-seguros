@@ -7,3 +7,57 @@
     flex-shrink: 0;
   }
 }
+
+
+/* Cotação rápida → WhatsApp */
+.quote-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.quote-summary-item {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg-soft);
+  padding: 16px;
+}
+
+.quote-summary-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.quote-summary-item strong {
+  display: block;
+  color: var(--blue-900);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.quote-whatsapp-note {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+#quoteSend {
+  margin-left: auto;
+}
+
+@media (max-width: 720px) {
+  .quote-summary {
+    grid-template-columns: 1fr;
+  }
+
+  #quoteSend {
+    width: 100%;
+    margin-left: 0;
+  }
+}
