@@ -61,3 +61,21 @@
     margin-left: 0;
   }
 }
+
+
+/* Crédito Korax no rodapé */
+.korax-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
+}
+
+.korax-credit strong {
+  font-weight: 800;
+}
+
+.korax-credit:hover {
+  opacity: 1;
+}
